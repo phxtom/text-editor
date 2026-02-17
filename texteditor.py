@@ -1,11 +1,16 @@
 import tkinter as tk
+import customtkinter as ctk
 from tkinter import filedialog
 
-root = tk.Tk()
-root.title("Text Editor")
-    
-text=tk.Text(root)
-text.grid()
+ctk.set_appearance_mode("dark")
+ctk.set_default_color_theme("dark-blue")
+
+app=ctk.CTk()
+app.geometry("900x600")
+app.title=("Scratchpad")
+
+text=ctk.CTkTextbox(app, font=("JetBrains Mono", 14))
+text.pack(fill="both", expand=True, padx=20, pady=20)
 
 def saveas():
     global text
